@@ -2,14 +2,16 @@ package Assignment2;
 
 import java.io.File;
 import java.util.*;
-import java.util.regex.Pattern;
 
 public class Assignment2_1 {
     public static void main(String[] args) {
-        //System.out.println("Please enter the folder path.");
-        String folderPath = "C:/Users/shung/IdeaProjects/AntraJava";
-        String extension = ".java";
-        boolean isIncludeSubFolder = true;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the folder path.");
+        String folderPath = sc.next();
+        System.out.println("Please enter the extension of the file.");
+        String extension = sc.next();
+        System.out.println("Please enter the isIncludeSubFolder or not.(true or false)");
+        boolean isIncludeSubFolder = Boolean.parseBoolean(sc.next());
         Criteria criteria = new Criteria(folderPath, extension, isIncludeSubFolder);
         count(criteria);
     }
